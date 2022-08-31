@@ -9,6 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -42,10 +43,10 @@ AppAsset::register($this);
         <div class="nano">
             <div class="nano-content">
                 <ul>
-                    <div class="logo"><a href="index.html">
+                    <div class="logo"><a href="">
                             <!-- <img src="images/logo.png" alt="" /> --><span>Alhon</span></a></div>
                     <li class="label">Menu</li>
-                    <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Products </a></li>
+                    <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Products </a></li>
                     <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Contact</a></li>
                     <li><a href="form-basic.html"><i class="ti-view-list-alt"></i> Basic Form </a></li>
                 </ul>
