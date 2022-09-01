@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "products".
@@ -18,6 +19,9 @@ class Products extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+
+    public $imageFile;
+
     public static function tableName()
     {
         return 'products';
@@ -31,6 +35,7 @@ class Products extends \yii\db\ActiveRecord
         return [
             [['description'], 'string'],
             [['name', 'cost', 'photo'], 'string', 'max' => 255],
+            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -46,5 +51,16 @@ class Products extends \yii\db\ActiveRecord
             'cost' => 'Cost',
             'photo' => 'Photo',
         ];
+    }
+
+    public function upload()
+    {
+        $this->photo=$this->imageFile->baseName . '.' . $this->imageFile->extension;
+        if ($this->validate()) {
+            $this->imageFile->saveAs(Yii::getAlias('@backend') . '/web/photos/' . $this->imageFile->baseName . '.' . $this->imageFile->extension,false);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
