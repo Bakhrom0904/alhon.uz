@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Contact;
 use common\models\LoginForm;
 use Yii;
 use yii\filters\VerbFilter;
@@ -62,7 +63,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $contacts=Contact::find()->orderBy("id DESC")->all();
+
+        return $this->render('index',["contacts"=>$contacts]);
     }
 
     /**
@@ -101,4 +104,6 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+
 }

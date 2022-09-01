@@ -47,8 +47,8 @@ AppAsset::register($this);
                             <!-- <img src="images/logo.png" alt="" /> --><span>Alhon</span></a></div>
                     <li class="label">Menu</li>
                     <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Products </a></li>
-                    <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Contact</a></li>
-                    <li><a href="form-basic.html"><i class="ti-view-list-alt"></i> Basic Form </a></li>
+                    <li><a href="<?= Url::to(['slide/']) ?>"><i class="ti-layout-grid2-alt"></i> Slide</a></li>
+                    <li><a href="<?= Url::to(['site/']) ?>"><i class="ti-view-list-alt"></i> Contact </a></li>
                 </ul>
             </div>
         </div>
@@ -274,7 +274,7 @@ AppAsset::register($this);
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="footer">
-                                <p>2018 © Admin Board. - <a href="#">example.com</a></p>
+                                <p><a href="https://alhon.uz">Alhon.uz</a></p>
                             </div>
                         </div>
                     </div>
