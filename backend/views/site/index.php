@@ -28,7 +28,7 @@
                             <td><?=$contact->surname;?></td>
                             <td><?=$contact->phone;?></td>
                             <td><?=$contact->message;?></td>
-                            <td><?=$contact->created_at;?></td>
+                            <td><?=date("d-m-Y H:i", strtotime($contact->created_at));?></td>
                             <td><?=$contact->status;?></td>
                         </tr>
                         <?php endforeach;?>

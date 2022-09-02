@@ -61,6 +61,7 @@ class SiteController extends Controller
      *
      * @return string
      */
+
     public function actionIndex()
     {
         $contacts=Contact::find()->orderBy("id DESC")->all();
