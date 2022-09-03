@@ -1,6 +1,8 @@
 <?php
 namespace api\models;
 
+use yii\helpers\Url;
+
 class Products extends \common\models\Products
 {
     public function fields()
@@ -10,7 +12,7 @@ class Products extends \common\models\Products
             'description',
             'image'=>function($model)
             {
-                return 'backend/web/photos'.$model->photo;
+                return Url::base('https') . '/web/photos/'.$model->photo;
             }
 
 

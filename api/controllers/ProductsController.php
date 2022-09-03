@@ -1,6 +1,6 @@
 <?php
 namespace api\controllers;
-use common\models\Products;
+use api\models\Products;
 use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
 use api\controllers\UniversalController;
@@ -19,7 +19,7 @@ class ProductsController  extends UniversalController
     public function actionIndex()
     {
         $dataProvider=new ActiveDataProvider([
-            'query'=>Products::find(),
+            'query' => Products::find(),
         ]);
         return $dataProvider;
     }

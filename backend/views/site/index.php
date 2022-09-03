@@ -1,4 +1,6 @@
-<?php use kartik\widgets\SwitchInput ?>
+<?php
+/** @var TYPE_NAME $contacts */
+?>
 <div class="row">
     <!-- /# column -->
     <div class="col-lg-12">
@@ -22,7 +24,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($contacts as $contact):?>
+                        <?php
+                        foreach ($contacts as $contact):?>
                         <tr>
                             <td><?=$contact->id;?></td>
                             <td><?=$contact->name;?></td>
@@ -31,7 +34,13 @@
                             <td><?=$contact->message;?></td>
                             <td><?=date("d-m-Y H:i", strtotime($contact->created_at));?></td>
 
-                            <td><a href="/site/status?id=<?=$contact->id;?>">Button</a></td>
+                            <td>
+                                <?php if($contact->status == 0): ?>
+                                    <a href="/admin/site/status?id=<?=$contact->id;?>">Button</a>
+                                <?php else: ?>
+                                    O'qildi
+                                <?php endif; ?>
+                            </td>
 
                         </tr>
                         <?php endforeach;?>

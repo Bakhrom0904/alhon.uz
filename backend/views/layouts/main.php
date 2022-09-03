@@ -43,12 +43,13 @@ AppAsset::register($this);
         <div class="nano">
             <div class="nano-content">
                 <ul>
-                    <div class="logo"><a href="">
+                    <div class="logo"><a href="/admin">
                             <!-- <img src="images/logo.png" alt="" /> --><span>Alhon</span></a></div>
                     <li class="label">Menu</li>
                     <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Products </a></li>
                     <li><a href="<?= Url::to(['slide/']) ?>"><i class="ti-layout-grid2-alt"></i> Slide</a></li>
                     <li><a href="<?= Url::to(['site/']) ?>"><i class="ti-view-list-alt"></i> Contact </a></li>
+                    <li><?= Html::a('Logout', Url::to(['site/logout'])) ?></li>
                 </ul>
             </div>
         </div>
@@ -208,7 +209,9 @@ AppAsset::register($this);
                             </div>
                         </div>
                         <div class="dropdown dib">
+                            <?= Html::a('Logout', Url::to(['site/logout'])) ?>
                             <div class="header-icon" data-toggle="dropdown">
+
                                 <span class="user-avatar">John
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
@@ -246,10 +249,11 @@ AppAsset::register($this);
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
-                                                    <i class="ti-power-off"></i>
-                                                    <span>Logout</span>
-                                                </a>
+                                                <?= Html::a('Logout', Url::to(['site/logout']), ['data-method' => 'POST']) ?>
+<!--                                                <a href="--><?//= Url::to(['site/logout']) ?><!--">-->
+<!--                                                    <i class="ti-power-off"></i>-->
+<!--                                                    <span>Logout</span>-->
+<!--                                                </a>-->
                                             </li>
                                         </ul>
                                     </div>
