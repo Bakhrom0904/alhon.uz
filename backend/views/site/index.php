@@ -1,3 +1,4 @@
+<?php use kartik\widgets\SwitchInput ?>
 <div class="row">
     <!-- /# column -->
     <div class="col-lg-12">
@@ -29,7 +30,9 @@
                             <td><?=$contact->phone;?></td>
                             <td><?=$contact->message;?></td>
                             <td><?=date("d-m-Y H:i", strtotime($contact->created_at));?></td>
-                            <td><?=$contact->status;?></td>
+
+                            <td><a href="/site/status?id=<?=$contact->id;?>">Button</a></td>
+
                         </tr>
                         <?php endforeach;?>
                         </tbody>

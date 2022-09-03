@@ -106,5 +106,19 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    public function actionStatus($id)
+    {
+        $holat = Contact::findOne($id);
+
+        $holat->status = 1;
+        if ($holat->save())
+        {
+            return $this->redirect(['/']);
+        }
+
+
+    }
+
+
 
 }

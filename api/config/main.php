@@ -49,6 +49,7 @@ return [
                     'controller' => [
                         'products',
                         'contact',
+                        'slide',
                     ]
                 ],
             ],
