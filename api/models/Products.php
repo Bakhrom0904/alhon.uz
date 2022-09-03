@@ -8,13 +8,13 @@ class Products extends \common\models\Products
     public function fields()
     {
         return [
+            'id',
             'name',
             'description',
             'image'=>function($model)
             {
-                return Url::base('https') . '/web/photos/'.$model->photo;
+                return 'https:/admin.alhon.uz/photos/'.$model->photo;
             }
-
 
         ];
     }

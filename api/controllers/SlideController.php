@@ -2,13 +2,13 @@
 
 namespace api\controllers;
 
-use common\models\Slide;
+use api\models\Slide;
 use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
 
 class SlideController extends UniversalController
 {
-    public $modelClass = 'common\models\Slide';
+    public $modelClass = 'api\models\Slide';
 
     public function actions()
     {
@@ -20,7 +20,7 @@ class SlideController extends UniversalController
     public function actionIndex()
     {
         $dataProvider=new ActiveDataProvider([
-            'query'=>Slide::find(),
+            'query' => Slide::find(),
         ]);
         return $dataProvider;
     }
