@@ -7,7 +7,7 @@ RewriteRule ^(frontend|backend)/web/ - [L]
 #RewriteRule ^admin(/(.*))?$ backend/web/$2 [S=1]
 
 # handle the case of frontend
-RewriteRule .* frontend/web/$0
+RewriteRule .* backend/web/$0
 
 # Uncomment the following, if you want speaking URL
 RewriteCond %{REQUEST_FILENAME} !-f
