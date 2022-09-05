@@ -12,16 +12,8 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
-        'admin' => [
-            'class' => 'mdm\admin\Module',
-            'layout' => 'left-menu',
-            'mainLayout' => '@app/views/layouts/main.php',
-        ]
     ],
     'components' => [
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
-        ],
         'request' => [
             'baseUrl'=>'',
             'csrfParam' => '_csrf-backend',
@@ -57,11 +49,5 @@ return [
 
     ],
     'params' => $params,
-//    'as access' => [
-//        'class' => 'mdm\admin\components\AccessControl',
-//        'allowActions' => [
-//            'site/*',
-//            'admin/*',
-//        ]
-//    ],
+
 ];
