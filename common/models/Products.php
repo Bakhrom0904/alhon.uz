@@ -55,7 +55,7 @@ class Products extends \yii\db\ActiveRecord
 
     public function upload()
     {
-        $this->photo=$this->imageFile->baseName . '.' . $this->imageFile->extension;
+        $this->photo=$this->imageFile->baseName .time(). '.' . $this->imageFile->extension;
         if ($this->validate()) {
             $this->imageFile->saveAs(Yii::getAlias('@api') . '/web/photos/' . $this->imageFile->baseName . '.' . $this->imageFile->extension,false);
             return true;

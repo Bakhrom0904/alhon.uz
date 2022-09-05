@@ -49,7 +49,7 @@ AppAsset::register($this);
                     <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Products </a></li>
                     <li><a href="<?= Url::to(['slide/']) ?>"><i class="ti-layout-grid2-alt"></i> Slide</a></li>
                     <li><a href="<?= Url::to(['site/']) ?>"><i class="ti-view-list-alt"></i> Contact </a></li>
-                    <li><?= Html::a('Logout', Url::to(['site/logout'])) ?></li>
+<!--                    <li>--><?//= Html::a('Logout', Url::to(['site/logout'])) ?><!--</li>-->
                 </ul>
             </div>
         </div>
