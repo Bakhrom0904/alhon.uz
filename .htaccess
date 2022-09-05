@@ -7,9 +7,13 @@ RewriteRule ^(frontend|backend)/web/ - [L]
 #RewriteRule ^admin(/(.*))?$ backend/web/$2 [S=1]
 
 # handle the case of frontend
-RewriteRule .* backend/web/$0
+RewriteRule .* frontend/web/$0
 
 # Uncomment the following, if you want speaking URL
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^/]+/web)/.*$ $1/index.php
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
