@@ -23,7 +23,7 @@ return [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
         ],
         'request' => [
-            'baseUrl'=>'/admin',
+            'baseUrl'=>'',
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [
@@ -49,7 +49,6 @@ return [
         ],
 
         'urlManager' => [
-            'scriptUrl'=>'/backend/index.php',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
