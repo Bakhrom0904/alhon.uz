@@ -5,12 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Slide $model */
 
-$this->title = Yii::t('app', 'Update Slide: {name}', [
-    'name' => $model->title,
-]);
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Slides'), 'url' => ['index']];
+$this->title = 'Update Slide: ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Slides', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('app', 'Update');
+$this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="slide-update">
 

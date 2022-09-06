@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var backend\models\SlideSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = Yii::t('app', 'Slides');
+$this->title = 'Slides';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="slide-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create Slide'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Slide', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
