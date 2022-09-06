@@ -12,7 +12,7 @@ class Slide extends \common\models\Slide
             'title',
             'image'=>function($model)
             {
-                return 'https:/admin.alhon.uz/backend/photos/'.$model->photo;
+                return 'https:/admin.alhon.uz/photos/'.$model->photo;
             }
 
         ];
