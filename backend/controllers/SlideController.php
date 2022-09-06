@@ -2,14 +2,11 @@
 
 namespace backend\controllers;
 
-use common\models\Products;
 use common\models\Slide;
 use backend\models\SlideSearch;
-use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
 
 /**
  * SlideController implements the CRUD actions for Slide model.
@@ -27,7 +24,7 @@ class SlideController extends Controller
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
-                        'delete' => ['POST'],
+
                     ],
                 ],
             ]
@@ -72,21 +69,9 @@ class SlideController extends Controller
     {
         $model = new Slide();
 
-        if ($this->request->isPost){
-
-            if ($model->load(Yii::$app->request->post())) {
-
-                $model->imageFile = UploadedFile::getInstance($model,'imageFile');
-
-                $uplod_file = true;
-                if(!$model->upload()){
-                    $uplod_file = false;
-                }
-
-                if ($uplod_file && $model->save()){
-                    return $this->redirect(['view', 'id' => $model->id]);
-                }
-
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -144,6 +129,6 @@ class SlideController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
