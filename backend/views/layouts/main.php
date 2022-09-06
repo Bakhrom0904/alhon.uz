@@ -64,7 +64,7 @@ AppAsset::register($this);
 
                     <div class="float-right">
                         <div class="dropdown dib">
-                            <button type="button" class="btn btn-info">Parolni yangilash</button>
+                            <a href="<?= Url::to(['user/security']) ?>"><button type="button" class="btn btn-info">Parolni yangilash</button></a>
                         </div>
                         <div class="dropdown dib">
                             <a href="<?= Url::to(['site/logout']) ?>"><button type="button" class="btn btn-dark">Chiqish</button></a>
