@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-title pr">
-                <h4>Contact messages</h4>
+                <h4>Murojatlar</h4>
 
             </div>
             <div class="card-body">
@@ -15,11 +15,11 @@
                         <thead>
                         <tr>
                             <th>id</th>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Phone</th>
-                            <th>Date</th>
-                            <th>Messages</th>
+                            <th>Ism</th>
+                            <th>Familiya</th>
+                            <th>Tel raqam</th>
+                            <th>Vaqt</th>
+                            <th>Xabarlar</th>
                             <th>Status</th>
                         </tr>
                         </thead>
