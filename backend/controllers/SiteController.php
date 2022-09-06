@@ -29,7 +29,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'status'],
+                        'actions' => ['logout', 'index', 'status','message'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -117,6 +117,13 @@ class SiteController extends Controller
         }
 
 
+    }
+
+    public function actionMessage($id)
+    {
+        $xabar=Contact::findOne($id);
+
+        return $this->render("message",["xabar"=>$xabar]);
     }
 
 

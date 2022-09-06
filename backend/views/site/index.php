@@ -18,8 +18,8 @@
                             <th>Name</th>
                             <th>Surname</th>
                             <th>Phone</th>
-                            <th>Message</th>
                             <th>Date</th>
+                            <th>Messages</th>
                             <th>Status</th>
                         </tr>
                         </thead>
@@ -31,14 +31,14 @@
                             <td><?=$contact->name;?></td>
                             <td><?=$contact->surname;?></td>
                             <td><?=$contact->phone;?></td>
-                            <td><?=$contact->message;?></td>
                             <td><?=date("d-m-Y H:i", strtotime($contact->created_at));?></td>
+                            <td> <a href="/site/message?id=<?=$contact->id;?>"><button type="button" class="btn btn-link">Xabarni o'qish</button></a></td>
 
                             <td>
                                 <?php if($contact->status == 0): ?>
-                                    <a href="/admin/site/status?id=<?=$contact->id;?>">Button</a>
+                                    <a href="/site/status?id=<?=$contact->id;?>"><button type="button" class="btn btn-success">Aktiv</button></a>
                                 <?php else: ?>
-                                    O'qildi
+                                    <button type="button" class="btn btn-warning">Noaktiv</button>
                                 <?php endif; ?>
                             </td>
 

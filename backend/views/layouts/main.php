@@ -43,7 +43,7 @@ AppAsset::register($this);
         <div class="nano">
             <div class="nano-content">
                 <ul>
-                    <div class="logo"><a href="/admin">
+                    <div class="logo"><a href="/">
                             <!-- <img src="images/logo.png" alt="" /> --><span>Alhon</span></a></div>
                     <li class="label">Menu</li>
                     <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Products </a></li>

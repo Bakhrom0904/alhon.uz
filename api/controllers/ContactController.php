@@ -2,11 +2,19 @@
 
 namespace api\controllers;
 
-use yii\rest\ActiveController;
 use api\controllers\UniversalController;
-use yii\data\ActiveDataProvider;
 
-class ContactController  extends ActiveController
+
+class ContactController  extends UniversalController
 {
     public $modelClass = 'common\models\Contact';
+
+    public function actions()
+    {
+        $actions=parent::actions();
+        unset($actions['create']);
+        return $actions;
+    }
+
+
 }

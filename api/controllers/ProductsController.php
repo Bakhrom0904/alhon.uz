@@ -2,7 +2,6 @@
 namespace api\controllers;
 use api\models\Products;
 use yii\data\ActiveDataProvider;
-use yii\rest\ActiveController;
 use api\controllers\UniversalController;
 
 class ProductsController  extends UniversalController
