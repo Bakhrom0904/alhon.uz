@@ -13,7 +13,7 @@ class Products extends \common\models\Products
             'description',
             'image'=>function($model)
             {
-                return 'https:/admin.alhon.uz/photos/'.$model->photo;
+                return 'https:/admin.alhon.uz/backend/photos/'.$model->photo;
             }
 
         ];
