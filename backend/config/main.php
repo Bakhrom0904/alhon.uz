@@ -17,6 +17,7 @@ return [
         'request' => [
             'baseUrl'=>'',
             'csrfParam' => '_csrf-backend',
+            'enableCsrfValidation' => false,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
