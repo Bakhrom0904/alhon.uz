@@ -15,7 +15,6 @@ class Products extends \common\models\Products
             {
                 return 'https:/admin.alhon.uz/photos/'.$model->photo;
             }
-
         ];
     }
 
