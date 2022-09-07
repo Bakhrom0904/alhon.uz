@@ -8,6 +8,6 @@ use yii\rest\ActiveController;
 
 class ContactController  extends ActiveController
 {
-    public $modelClass = 'api\models\Contact';
+    public $modelClass = 'common\models\Contact';
 
 }

@@ -108,8 +108,25 @@ class SlideController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+        if ($this->request->isPost){
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->imageFile = UploadedFile::getInstance($model,'imageFile');
+
+                $uplod_file = true;
+                if(!$model->upload()){
+                    $uplod_file = false;
+                }
+
+                if ($uplod_file && $model->save()){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+
+            }
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('update', [
