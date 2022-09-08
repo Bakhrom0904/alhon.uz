@@ -34,7 +34,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'description:ntext',
             'cost',
-            'photo',
+            [
+                'attribute' => 'photo',
+                'format' => 'html',
+                'value' => function ($model) {
+                    return Html::img(Yii::getAlias('@web').'/photos/'. $model['photo'],
+                        ['width' => '80px']);
+                },
+            ],
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Products $model, $key, $index, $column) {
