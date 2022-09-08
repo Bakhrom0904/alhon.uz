@@ -3,6 +3,8 @@
 namespace api\controllers;
 
 
+use common\models\Contact;
+use Yii;
 use yii\rest\ActiveController;
 
 
