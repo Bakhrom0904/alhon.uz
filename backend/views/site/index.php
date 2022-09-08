@@ -14,7 +14,6 @@
                     <table class="table student-data-table m-t-20">
                         <thead>
                         <tr>
-                            <th>id</th>
                             <th>Ism</th>
                             <th>Familiya</th>
                             <th>Tel raqam</th>
@@ -27,7 +26,6 @@
                         <?php
                         foreach ($contacts as $contact):?>
                         <tr>
-                            <td><?=$contact->id;?></td>
                             <td><?=$contact->name;?></td>
                             <td><?=$contact->surname;?></td>
                             <td><?=$contact->phone;?></td>
