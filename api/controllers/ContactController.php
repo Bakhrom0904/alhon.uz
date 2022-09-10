@@ -6,6 +6,7 @@ namespace api\controllers;
 use common\models\Contact;
 use Yii;
 use yii\rest\ActiveController;
+use yii\web\Response;
 
 
 class ContactController  extends ActiveController
@@ -19,11 +20,18 @@ class ContactController  extends ActiveController
         // add CORS filter
         $behaviors['corsFilter'] = [
             'class' => \yii\filters\Cors::class,
-            'cors' => [
-//                // restrict access to
-                'Origin' => [
-                    '*'
-                ],
+//            'cors' => [
+////                // restrict access to
+//                'Origin' => [
+//                    '*'
+//                ],
+//            ],
+        ];
+
+        $behaviors['formats'] = [
+            'class' => 'yii\filters\ContentNegotiator',
+            'formats' => [
+                'application/json' => Response::FORMAT_JSON,
             ],
         ];
 
@@ -32,14 +40,6 @@ class ContactController  extends ActiveController
         return $behaviors;
     }
 
-    public function actions()
-    {
-        $actions=parent::actions();
-        unset($actions['index']);
-        unset($actions['view']);
-        unset($actions['update']);
-        unset($actions['delete']);
-        return $actions;
-    }
+
 
 }
