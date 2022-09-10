@@ -20,12 +20,6 @@ class ContactController  extends ActiveController
         // add CORS filter
         $behaviors['corsFilter'] = [
             'class' => \yii\filters\Cors::class,
-//            'cors' => [
-////                // restrict access to
-//                'Origin' => [
-//                    '*'
-//                ],
-//            ],
         ];
 
         $behaviors['formats'] = [
