@@ -50,7 +50,7 @@ class Mahsulotlar extends \yii\db\ActiveRecord
     {
         $this->foto=$this->imageFile->baseName .'.' . $this->imageFile->extension;
         if ($this->validate()) {
-            $this->imageFile->saveAs(Yii::getAlias('@backend') . '/web/rasmlar/' . $this->imageFile->baseName . '.' . $this->imageFile->extension,false);
+            $this->imageFile->saveAs(Yii::getAlias('@backend') . '/web/photos/' . $this->imageFile->baseName . '.' . $this->imageFile->extension,false);
             return true;
         } else {
             return false;
