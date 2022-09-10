@@ -51,6 +51,7 @@ return [
                         'products',
                         'contact',
                         'slide',
+                        'mahsulotlar',
                     ]
                 ],
             ],
