@@ -9,8 +9,7 @@ class Products extends \common\models\Products
     {
         return [
             'id',
-            'name',
-            'description',
+            'nomi',
             'image'=>function($model)
             {
                 return 'https:/admin.alhon.uz/photos/'.$model->photo;
