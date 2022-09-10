@@ -48,7 +48,7 @@ AppAsset::register($this);
                     <li class="label">Menu</li>
                     <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Tovarlar1 </a></li>
                     <li><a href="<?= Url::to(['slide/']) ?>"><i class="ti-layout-grid2-alt"></i> Slidelar</a></li>
-                    <li><a href="<?= Url::to(['products/']) ?>"><i class="ti-calendar"></i> Tovarlar2 </a></li>
+                    <li><a href="<?= Url::to(['mahsulotlar/']) ?>"><i class="ti-calendar"></i> Tovarlar2 </a></li>
                     <li><a href="<?= Url::to(['site/']) ?>"><i class="ti-view-list-alt"></i> Murojatlar </a></li>
 <!--                    <li>--><?//= Html::a('Logout', Url::to(['site/logout'])) ?><!--</li>-->
                 </ul>
