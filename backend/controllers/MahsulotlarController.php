@@ -4,9 +4,11 @@ namespace backend\controllers;
 
 use common\models\Mahsulotlar;
 use backend\models\MahsulotlarSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * MahsulotlarController implements the CRUD actions for Mahsulotlar model.
@@ -69,9 +71,21 @@ class MahsulotlarController extends Controller
     {
         $model = new Mahsulotlar();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost){
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->imageFile = UploadedFile::getInstance($model,'imageFile');
+
+                $uplod_file = true;
+                if(!$model->upload()){
+                    $uplod_file = false;
+                }
+
+                if ($uplod_file && $model->save()){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+
             }
         } else {
             $model->loadDefaultValues();
@@ -93,8 +107,24 @@ class MahsulotlarController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($this->request->isPost){
+
+            if ($model->load(Yii::$app->request->post())) {
+
+                $model->imageFile = UploadedFile::getInstance($model,'imageFile');
+
+                $uplod_file = true;
+                if(!$model->upload()){
+                    $uplod_file = false;
+                }
+
+                if ($uplod_file && $model->save()){
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+
+            }
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('update', [
