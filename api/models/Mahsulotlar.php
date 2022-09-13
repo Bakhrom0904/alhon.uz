@@ -12,7 +12,7 @@ class Mahsulotlar extends \common\models\Mahsulotlar
             'name',
             'image'=>function($model)
             {
-                return 'https:/admin.alhon.uz/rasmlar/'.$model->foto;
+                return 'https://admin.alhon.uz/rasmlar/'.$model->foto;
             }
         ];
     }
