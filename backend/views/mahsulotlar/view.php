@@ -31,7 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'foto',
+            [
+                'attribute' => 'foto',
+                'format' => 'html',
+                'value' => function ($model) {
+                    return Html::img(Yii::getAlias('@web').'/photos/'. $model['photo'],
+                        ['width' => '90px']);
+                },
+            ],
         ],
     ]) ?>
 
