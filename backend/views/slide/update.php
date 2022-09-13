@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Slide $model */
 
-$this->title = 'Update Slide: ' . $model->title;
+$this->title = 'Slideni yangilash';
 $this->params['breadcrumbs'][] = ['label' => 'Slides', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

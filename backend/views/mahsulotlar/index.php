@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var backend\models\MahsulotlarSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Mahsulotlars';
+$this->title = 'Jahon talabidagi mahsulotlar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mahsulotlar-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Mahsulotlar', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Mahsulot qoshish', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
